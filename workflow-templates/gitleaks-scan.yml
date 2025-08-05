@@ -20,4 +20,7 @@ jobs:
       - name: Run Gitleaks Scan
         uses: gitleaks/gitleaks-action@v2
         env:
+          # Passa a licença para a Action (correto)
           GITLEAKS_LICENSE: ${{ secrets.GITLEAKS_LICENSE }}
+          # Passa o token de acesso à API do GitHub (a correção que faltava)
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
